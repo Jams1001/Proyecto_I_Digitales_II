@@ -1,0 +1,7 @@
+
+read_verilog 32b_8b.v 
+hierarchy -check -top conv_32b_8b
+proc; opt; fsm; opt; memory; opt
+techmap; opt
+show
+write_verilog 32b_8b_estruc.v
