@@ -6,11 +6,11 @@ module ochoBit_32Bit ( input wire clk_4f,
                 output reg [31:0] data_out   
 );
 
-reg [2:0]contador;  // Contador para pasar datos de entrada a salida serialmente
+reg [2:0]contador;  // contador para mantener 'track' de datos a transmitir
 
-initial begin
-    contador = 0;  // Inicializar contador
-end
+//initial begin
+  //  contador = 0;  // Inicializar contador
+//end
 
 always @(posedge clk_4f)begin  
 
