@@ -1,16 +1,15 @@
 [*]
 [*] GTKWave Analyzer v3.3.103 (w)1999-2019 BSI
-[*] Sun Oct  3 16:55:01 2021
+[*] Tue Oct  5 16:53:58 2021
 [*]
-[dumpfile] "/home/jams/IIS_2021/IE0523_CIRCUITOS_DIGITALES_II/Proyectos/Proyecto_1/resultados.vcd"
-[dumpfile_mtime] "Sun Oct  3 16:53:38 2021"
+[dumpfile] "/home/jams/IIS_2021/IE0523_CIRCUITOS_DIGITALES_II/Proyectos/Proyecto_1/generador_de_relojes.vcd"
+[dumpfile_mtime] "Tue Oct  5 16:53:30 2021"
 [dumpfile_size] 3965
 [savefile] "/home/jams/IIS_2021/IE0523_CIRCUITOS_DIGITALES_II/Proyectos/Proyecto_1/generador_de_relojes.gtkw"
 [timestart] 0
 [size] 1000 600
 [pos] -1 -1
-*-5.982025 199 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
-[treeopen] testbench.
+*-5.982025 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
 [sst_width] 233
 [signals_width] 78
 [sst_expanded] 1
