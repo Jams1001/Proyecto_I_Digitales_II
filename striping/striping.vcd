@@ -1,5 +1,5 @@
 $date
-	Mon Oct 04 21:37:33 2021
+	Tue Oct 05 00:10:19 2021
 $end
 $version
 	Icarus Verilog
@@ -118,12 +118,18 @@ b1 '
 b1 +
 b1 ,
 0#
+bz &
+bz *
+bz -
 1/
 1(
 #24
 0(
 #26
 0"
+bz %
+bz )
+bz .
 0/
 b10 '
 b10 +
