@@ -3,13 +3,12 @@
 `include "probador_un_striping.v"
 `include "un_stripring.v"
 //`include "mux_striping_synth.v"
-//`include "cmos_cells.v"
 module BancoPruebas_unstriping;
 	wire clk_2f, valid_out, valid_0, valid_1, reset;// valid_out_sintetizado
 	wire [31:0] data_out;
 	wire [31:0] lane_0;
 	wire [31:0] lane_1;
-	wire [31:0] data_out_sintetizado;
+	//wire [31:0] data_out_synth;
 
 	un_stripring un_stripringbp(/*AUTOINST*/
 			  // Outputs
@@ -25,7 +24,7 @@ module BancoPruebas_unstriping;
 	
 //	mux_striping_synth mux_striping_synthbp(/*AUTOINST*/
 			  // Outputs
-//			  .data_out	(data_out_sintetizado[31:0]),
+//			  .data_out	(data_out_synth[31:0]),
 //			  .valid_out	(valid_out_sintetizado),
 			  // Inputs
 //			  .clk_2f		(clk_2f),
@@ -46,7 +45,7 @@ module BancoPruebas_unstriping;
 				       // Inputs
 				       .data_out	(data_out[31:0]),
 				       .valid_out	(valid_out),
-					  // .data_out_sintetizado	(data_out_sintetizado[31:0]),
+					  // .data_out_synth	(data_out_synth[31:0]),
 				     //  .valid_out_sintetizado	(valid_out_sintetizado),
 					   .reset 					(reset));
 endmodule
