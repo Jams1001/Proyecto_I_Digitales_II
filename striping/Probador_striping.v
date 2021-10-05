@@ -13,13 +13,22 @@ module Probador_striping
     output reg reset,
     output reg [31:0] data_in
 );
+	/*always @(posedge clk_2f)
+	begin
+    	if(valid_in <= 0) data_in <= 32'h00000000;
+	end*/
+
 	initial begin
 	$dumpfile("striping.vcd");
 	$dumpvars;
 
+	
+
+
 	valid_in <= 0;
     reset <= 0;
 	data_in <= 32'h00000000;
+
 	@(posedge clk_2f);
     valid_in <= 1;
 	data_in <= 32'hFFFFFFFF;
@@ -35,15 +44,14 @@ module Probador_striping
 
 	@(posedge clk_2f);
     valid_in <= 0;
-	data_in <= 32'hBBBBBBBB;
+	data_in <= 32'h00000000;
 
     @(posedge clk_2f);
-	valid_in <= 0;
-	data_in <= 32'h00000001;
+	data_in <= 32'h00000200;
 
 	@(posedge clk_2f);
 	valid_in <= 0;
-	data_in <= 32'h00000002;
+	data_in <= 32'h00000000;
 
 	@(posedge clk_2f);
 	valid_in <= 1;
@@ -59,9 +67,18 @@ module Probador_striping
 
     @(posedge clk_2f);
     reset=1;
+	valid_in <= 1;
+	data_in <= 32'hAAAAAAAA;
+
+	@(posedge clk_2f);
+	reset=~reset;
+    valid_in <= 1;
+	data_in <= 32'h00000005;
 
 	$finish;
 	end
+
+
 	initial clk_2f <= 0;
 	always #2 clk_2f <= ~clk_2f;
 

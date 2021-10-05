@@ -38,14 +38,13 @@ begin
 
         else if (valid_in == 0 && selector == 0) begin
             selector <= ~selector; //continuar haciendo toogle aunque valid este en 0
-            lane_0 <= 32'hzzzzzzzz;
-            //data_in <= lane_0;
+            lane_0 <= 32'h00000000;
             valid_0<=0;
         end
         else if (valid_in == 0 && selector == 1) 
         begin
             selector <= ~selector;
-            lane_1 <= 32'hzzzzzzzz;
+            lane_1 <= 32'h00000000;
             valid_1 <= 0;
         end
     end
