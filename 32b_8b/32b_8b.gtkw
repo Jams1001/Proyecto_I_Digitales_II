@@ -1,0 +1,37 @@
+[*]
+[*] GTKWave Analyzer v3.3.103 (w)1999-2019 BSI
+[*] Tue Oct  5 20:47:49 2021
+[*]
+[dumpfile] "/home/luisja01/Documents/Circuitos_Digitales_II/Proyecto/32b_8b/resultados.vcd"
+[dumpfile_mtime] "Tue Oct  5 15:54:52 2021"
+[dumpfile_size] 5645
+[savefile] "/home/luisja01/Documents/Circuitos_Digitales_II/Proyecto/32b_8b/32b_8b.gtkw"
+[timestart] 0
+[size] 1165 610
+[pos] -1 -1
+*-6.091170 4 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[sst_width] 212
+[signals_width] 190
+[sst_expanded] 1
+[sst_vpaned_height] 154
+@28
+testbench.clk_4f
+testbench.clk_f
+@22
+testbench.data_in[31:0]
+@28
+testbench.valid_in
+@200
+-
+@22
+[color] 2
+testbench.data_out[7:0]
+[color] 2
+testbench.data_out_estruc[7:0]
+@200
+-
+@28
+[color] 3
+testbench.valid_out
+[pattern_trace] 1
+[pattern_trace] 0
