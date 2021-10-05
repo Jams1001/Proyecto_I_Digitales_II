@@ -12,7 +12,7 @@ module striping
 reg selector;
 always @(posedge clk_2f) 
 begin
-    if(reset == 0)
+    if(reset == 1)
     begin
         selector<=0; //permanecer todas las salidas en bajo
         valid_0 <= 0;
@@ -22,11 +22,12 @@ begin
     end
     else 
     begin
+        selector <= 0;
         if(valid_in == 1 && selector == 0 ) 
         begin
             lane_0 <= data_in;
             selector <= ~selector; //hacer toggle a selector para enviar datos por 2 canales en diferentes en cada ciclo siempre
-            valid_0 < =1; //enable lane 0
+            valid_0 <= 1; //enable lane 0
         end
 
         else if(valid_in == 1 && selector == 1) begin
