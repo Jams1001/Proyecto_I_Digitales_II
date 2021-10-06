@@ -1,10 +1,9 @@
 `timescale 1ns/1ns
 `include "probador_un_striping.v"
 `include "un_stripring.v"
-`include "un_stripring_synth.v"
-
+`include "unstriping_synth.v"
 module BancoPruebas_unstriping;
-	wire clk_f,clk_2f, valid_out, valid_0, valid_1, reset,valid_out_synth;// 
+	wire clk_f,clk_2f, valid_out, valid_0, valid_1, reset,valid_out_synth;
 	wire [31:0] data_out;
 	wire [31:0] lane_0;
 	wire [31:0] lane_1;
@@ -22,7 +21,7 @@ module BancoPruebas_unstriping;
 			  .valid_1		(valid_1),
 			  .reset 		(reset));
 	
-	un_stripring_synth un_stripring_synthbp(/*AUTOINST*/
+	unstriping_synth unstriping_synthbp(/*AUTOINST*/
 			  // Outputs
 			  .data_out	(data_out_synth[31:0]),
 			  .valid_out	(valid_out_synth),
