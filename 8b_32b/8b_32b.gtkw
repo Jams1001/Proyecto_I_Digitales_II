@@ -1,19 +1,19 @@
 [*]
 [*] GTKWave Analyzer v3.3.103 (w)1999-2019 BSI
-[*] Tue Oct  5 21:20:31 2021
+[*] Wed Oct  6 01:25:00 2021
 [*]
-[dumpfile] "/home/matias/Documents/Digitales/Proyecto1/8b_32b/resultados.vcd"
-[dumpfile_mtime] "Tue Oct  5 21:14:26 2021"
-[dumpfile_size] 32707
+[dumpfile] "/home/matias/Documents/Digitales/Proyecto1/8b_32b/8b_32b.vcd"
+[dumpfile_mtime] "Wed Oct  6 01:21:49 2021"
+[dumpfile_size] 32531
 [savefile] "/home/matias/Documents/Digitales/Proyecto1/8b_32b/8b_32b.gtkw"
 [timestart] 0
-[size] 1181 353
-[pos] 55 26
-*-6.463104 169 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[size] 1183 600
+[pos] -1 -1
+*-6.177771 170 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
 [sst_width] 233
-[signals_width] 259
+[signals_width] 248
 [sst_expanded] 1
-[sst_vpaned_height] 58
+[sst_vpaned_height] 144
 @28
 testbench.clk_4f
 testbench.clk_f
@@ -24,7 +24,7 @@ testbench.valid_in
 @22
 testbench.data_out[31:0]
 testbench.data_out_estr[31:0]
-@28
+@29
 testbench.valid_out
 [pattern_trace] 1
 [pattern_trace] 0

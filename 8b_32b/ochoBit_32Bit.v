@@ -39,7 +39,7 @@ always @(posedge clk_4f)begin
     end
     else if(valid_in == 0)begin  // si valid_in está en 0 no se pasan datos a data_out
         valid_out <= valid_in;
-        data_out <= 32'bXXXXXXXX;
+        data_out <= 32'b00000000;
         contador = 0;  // se resetea contador
     end
 end

@@ -23,7 +23,7 @@ initial begin
     @(posedge clk_f) valid_in <= 1; data_in <= 32'hFFFBBFFF;
     @(posedge clk_f)  data_in <= 32'hDDDDDDDD;
     @(posedge clk_f) valid_in <= 0; data_in <= 32'hAAAAAAAA;
-    @(posedge clk_f) valid_in <= 1; data_in <= 32'h00000003;
+    @(posedge clk_f) valid_in <= 1; data_in <= 32'hDD000003;
     @(posedge clk_f) valid_in <= 0;
 
     #50 $finish;
