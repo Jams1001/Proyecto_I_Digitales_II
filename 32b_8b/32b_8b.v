@@ -41,7 +41,7 @@ always @(posedge clk_4f)begin
     end
     else if(valid_in == 0)begin // Condición para cuando valid_in se encuentre en 0 
         valid_out <= valid_in; // Se pasa la señal de valid_in a valid_out
-        data_out <= 8'bXXXXXXXX;  // Se pasa una señal "basura" a data_out
+        data_out <= 8'b00000000;  // Se pasa una señal "basura" a data_out
         contador = 0;  // Se reinicia el contador             
     end
 end
