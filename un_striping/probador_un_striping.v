@@ -6,7 +6,7 @@ module probador_un_striping
   	input valid_out_synth,
     output reg valid_0,  
     output reg valid_1,
-	output reg clk_f,
+	//output reg clk_f,
     output reg clk_2f,
     output reg reset,
     output reg [31:0] lane_0,
@@ -15,11 +15,8 @@ module probador_un_striping
 	initial begin
 	$dumpfile("unstriping.vcd");
 	$dumpvars;
-	valid_0 <= 0;
-	valid_1 <= 0;
-	reset <= 0;
+	{valid_0,valid_1,reset} <= 0;
 	{lane_0,lane_1} <= 32'h00000000;
-
 	@(posedge clk_2f);
 	valid_0 <= 1;
 	lane_0 <= 32'hFFFFFFFF;
@@ -62,8 +59,8 @@ module probador_un_striping
 	$finish;
 	end
 
-	initial clk_f <= 0;
-	always #1 clk_f <= ~clk_f;
+	/*initial clk_f <= 0;
+	always #1 clk_f <= ~clk_f;*/
 	
 	initial clk_2f <= 0;
 	always #2 clk_2f <= ~clk_2f;

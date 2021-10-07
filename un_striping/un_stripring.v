@@ -21,7 +21,7 @@ begin
     else 
     begin
         selector <= 0;
-        valid_out <= 0;
+        //valid_out <= 0;
         if(valid_0 == 1 && selector == 0) 
         begin
             data_out <= lane_0 ;

@@ -2,8 +2,10 @@
 `include "probador_un_striping.v"
 `include "un_stripring.v"
 `include "unstriping_synth.v"
+`include "cmos_cells.v"
+
 module BancoPruebas_unstriping;
-	wire clk_f,clk_2f, valid_out, valid_0, valid_1, reset,valid_out_synth;
+	wire clk_2f, valid_out, valid_0, valid_1, reset,valid_out_synth;
 	wire [31:0] data_out;
 	wire [31:0] lane_0;
 	wire [31:0] lane_1;
@@ -38,7 +40,7 @@ module BancoPruebas_unstriping;
 				       // Outputs
 				       .valid_0		(valid_0),
 				       .valid_1		(valid_1),
-					   .clk_f       (clk_f),
+					   //.clk_f       (clk_f),
 				       .clk_2f		(clk_2f),
 				       .lane_0		(lane_0[31:0]),
 				       .lane_1		(lane_1[31:0]),
