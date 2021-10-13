@@ -10,7 +10,27 @@ module paralelo_serial
 );
 reg [2:0] selector1;
 reg [2:0] selector2;
-    always @(posedge clk_4f) 
+    /*always @(posedge clk_4f) 
+    begin
+        if (reset == 0) 
+        begin
+            if(valid_in == 1) 
+            begin
+                data2send <= data_in;
+            end
+            else 
+            begin
+                data2send <= 8'hBC;
+            end
+        end
+        
+        else 
+        begin
+            data2send <= 8'h00;
+        end
+    end*/
+
+    always @(posedge clk_32f) 
     begin
         if (reset == 0) 
         begin
@@ -37,7 +57,7 @@ reg [2:0] selector2;
             else 
             begin
                 selector2 <= 0;
-                data2send <= 8'BC;
+                data2send <= 8'hBC;
                 case (selector1)
                     0: data_out <= 1;
                     1: data_out <= 0;
@@ -58,7 +78,7 @@ reg [2:0] selector2;
         
         else 
         begin
-            data_out <= 8'b00;
+            data_out <= 8'h00;
             {selector1, selector2} <= 0;
             data2send <= 8'h00;
         end

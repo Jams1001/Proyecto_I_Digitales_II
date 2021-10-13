@@ -3,7 +3,7 @@
 `include "paralelo_serial.v"
 `include "probador_paralelo_serial.v"
 `include "paralelo_serial_synth.v"
-`include "cmos_cells.v"
+//`include "cmos_cells.v"
 
 
 module BancoPruebas_paralelo_serial;

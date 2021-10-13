@@ -14,7 +14,7 @@ module probador_paralelo_serial
 	$dumpfile("paralelo_serial.vcd");
 	$dumpvars;
 
-	{valid_in} <= 0;
+	valid_in <= 0;
 	data_in <= 8'h00;
 	reset <=1;
 	
@@ -25,32 +25,32 @@ module probador_paralelo_serial
 
 	@(posedge clk_4f);
     reset <= 0;
-	valid_in <= 1;
-	data_in <= 8'hCC;
-	reset <=1;
+	
+
+    @(posedge clk_4f);
+    valid_in <= 1;
+	data_in <= 8'hFF;
+
 	@(posedge clk_4f);
-	valid_in <= 1;
+	data_in <= 8'hEE;
+
+	@(posedge clk_4f);
+	data_in <= 8'hDD;
+
+	@(posedge clk_4f);
+	valid_in <= ~valid_in;
 	data_in <= 8'hAA;
 
 	@(posedge clk_4f);
-	valid_in <= 1;
+	valid_in <= ~valid_in;
 	data_in <= 8'hCC;
 
 	@(posedge clk_4f);
 	valid_in <= 1;
+	data_in <= 8'hBB;
+
+	@(posedge clk_4f);
 	data_in <= 8'hAA;
-
-	@(posedge clk_4f);
-	valid_in <= 0;
-	data_in <= 8'hCC;
-
-	@(posedge clk_4f);
-	valid_in <= 1;
-	data_in <= 8'hAA;
-
-	@(posedge clk_4f);
-	valid_in <= 1;
-	data_in <= 8'hCC;
 	@(posedge clk_4f);
 	$finish;
 	end
@@ -58,7 +58,7 @@ module probador_paralelo_serial
 	initial clk_4f <= 0;
 	always #8 clk_4f <= ~clk_4f;
 
-	initial clk_32f <= 1;
+	initial clk_32f <= 0;
 	always #1 clk_32f <= ~clk_32f;
 
 

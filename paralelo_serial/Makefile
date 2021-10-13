@@ -1,6 +1,6 @@
 all: t1 t2 t3 t4 t5
 t1:
-	yosys -s paralelo_Serialsynth.ys
+	yosys -s paralelo_serialsynth.ys
 t2:
 	sed -i 's/paralelo_serial/paralelo_serial_synth/' paralelo_serial_synth.v
 t3:
