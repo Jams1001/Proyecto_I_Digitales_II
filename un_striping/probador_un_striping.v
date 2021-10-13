@@ -15,11 +15,17 @@ module probador_un_striping
 	initial begin
 	$dumpfile("unstriping.vcd");
 	$dumpvars;
+<<<<<<< HEAD
 	{valid_0,valid_1} <= 0;
 	reset <=1;
 	{lane_0,lane_1} <= 32'h00000000;
 	@(posedge clk_2f);
 	@(posedge clk_2f);
+=======
+	{valid_0,valid_1,reset} <= 0;
+	{lane_0,lane_1} <= 32'h00000000;
+	@(posedge clk_2f);
+>>>>>>> 74b2fbd87b5ea41e125efacca2712fe09a2e05a1
 	valid_0 <= 1;
 	lane_0 <= 32'hFFFFFFFF;
 	lane_1 <= 32'hFFFFFFFF;
