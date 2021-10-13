@@ -2,12 +2,12 @@ module Probador_striping
 ( 
     input [31:0] lane_0,
     input [31:0] lane_1,
- //   input [31:0] lane_0_synth,
- //   input [31:0] lane_1_synth,
+    input [31:0] lane_0_synth,
+    input [31:0] lane_1_synth,
     input valid_0,
     input valid_1,
- //   input valid_out_sintetizado0,
- //   input valid_out_sintetizado1,  
+    input valid_0_synth,
+    input valid_1_synth,  
     output reg valid_in,
     output reg clk_2f,
     output reg reset,
@@ -22,18 +22,17 @@ module Probador_striping
 	$dumpfile("striping.vcd");
 	$dumpvars;
 
-	
-
-
 	valid_in <= 0;
-    reset <= 0;
+    reset <= 1;
 	data_in <= 32'h00000000;
 
+	@(posedge clk_2f);
 	@(posedge clk_2f);
     valid_in <= 1;
 	data_in <= 32'hFFFFFFFF;
 
 	@(posedge clk_2f);
+	reset <=0;
 	data_in <= 32'hEEEEEEEE;
 
 	@(posedge clk_2f);
