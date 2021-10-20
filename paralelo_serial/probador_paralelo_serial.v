@@ -55,10 +55,10 @@ module probador_paralelo_serial
 	$finish;
 	end
 	
-	initial clk_4f <= 0;
+	initial clk_4f <= 1;
 	always #8 clk_4f <= ~clk_4f;
 
-	initial clk_32f <= 0;
+	initial clk_32f <= 1;
 	always #1 clk_32f <= ~clk_32f;
 
 

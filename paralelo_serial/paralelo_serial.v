@@ -58,7 +58,7 @@ reg [2:0] selector2;
             begin
                 selector2 <= 0;
                 data2send <= 8'hBC;
-                case (selector1)
+                case (selector2)
                     0: data_out <= 1;
                     1: data_out <= 0;
                     2: data_out <= 1;
