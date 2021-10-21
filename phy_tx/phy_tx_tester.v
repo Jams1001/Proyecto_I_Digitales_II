@@ -7,7 +7,9 @@ module phy_tx_tester(
     input wire clk4,
     output reg clk32,
     input wire serial_o0,
-    input wire serial_o1);
+    input wire serial_o1,
+    input wire serial_o0_synth,
+    input wire serial_o1_synth);
     
     
     always #1 clk32 <= ~clk32;
