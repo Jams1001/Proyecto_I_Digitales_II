@@ -3,8 +3,6 @@
 `include "paralelo_serial.v"
 `include "probador_paralelo_serial.v"
 `include "paralelo_serial_synth.v"
-//`include "cmos_cells.v"
-
 
 module BancoPruebas_paralelo_serial;
     wire [7:0] data2send, data_in, data2send_synth;

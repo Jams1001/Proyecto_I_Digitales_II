@@ -1,0 +1,7 @@
+read_verilog serial_paralelo.v
+proc; opt; memory; opt; fsm; opt;
+techmap; opt;
+dfflibmap -liberty ./cmos_cells.lib
+abc -liberty ./cmos_cells.lib
+clean
+write_verilog serial_paralelo_synth.v
