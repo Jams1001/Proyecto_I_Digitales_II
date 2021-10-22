@@ -1,0 +1,6 @@
+read_verilog phy_tx.v 
+hierarchy -check -top phy_tx
+proc; opt; fsm; opt; memory; opt
+techmap; opt
+#show
+write_verilog phy_tx_synth.v

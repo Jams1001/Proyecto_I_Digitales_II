@@ -9,3 +9,11 @@ t:
 a:	
 	emacs --batch  testbench.v -f verilog-batch-auto
 	
+s:
+	yosys -s sintetizado.ys
+
+c:
+	sed -i 's/conv_32b_8b/conv_32b_8b_synth/g' phy_tx_synth.v
+	sed -i 's/paralelo_serial/paralelo_serial_synth/g' phy_tx_synth.v
+	sed -i 's/striping/striping_synth/g' phy_tx_synth.v
+	sed -i 's/phy_tx/phy_tx_synth/g' phy_tx_synth.v

@@ -1,18 +1,32 @@
 `timescale 1ns/1ns
 
 `include "phy_tx.v" 
+`include "phy_tx_synth.v" 
 `include "phy_tx_tester.v" 
 `include "generador_de_relojes.v" 
 
 module testbench; 
 
 	wire [31:0] input_bus;
-	wire valid, reset, clk, clk2, clk4, clk32, serial_o0, serial_o1;
+	wire valid, reset, clk, clk2, clk4, clk32, serial_o0, serial_o1, serial_o0_synth, serial_o1_synth;
 
 phy_tx phy_txINST(/*AUTOINST*/
 		  // Outputs
 		  .serial_o0		(serial_o0),
 		  .serial_o1		(serial_o1),
+		  // Inputs
+		  .input_bus		(input_bus[31:0]),
+		  .valid		(valid),
+		  .reset		(reset),
+		  .clk			(clk),
+		  .clk2			(clk2),
+		  .clk4			(clk4),
+		  .clk32		(clk32));
+
+phy_tx_synth phy_txINST_synth(/*AUTOINST*/
+		  // Outputs
+		  .serial_o0		(serial_o0_synth),
+		  .serial_o1		(serial_o1_synth),
 		  // Inputs
 		  .input_bus		(input_bus[31:0]),
 		  .valid		(valid),
@@ -33,7 +47,11 @@ phy_tx_tester phy_tx_testerINST(/*AUTOINST*/
 				.clk4		(clk4),
 				.clk32		(clk32),
 				.serial_o0	(serial_o0),
-				.serial_o1	(serial_o1));
+				.serial_o1	(serial_o1),
+				.serial_o0_synth	(serial_o0_synth),
+				.serial_o1_synth	(serial_o1_synth));
+
+
 
 generador_de_relojes generador_de_relojesINST(/*AUTOINST*/
 					      // Outputs
@@ -45,3 +63,4 @@ generador_de_relojes generador_de_relojesINST(/*AUTOINST*/
 					      // Inputs
 					      .CLK32		(clk32));
 endmodule
+
