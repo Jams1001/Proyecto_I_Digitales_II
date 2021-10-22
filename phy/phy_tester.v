@@ -6,6 +6,7 @@ module phy_tester(
     input wire clk2,
     input wire clk4,
     input [31:0] output_bus,
+    input [31:0] output_bus_synth,
     output reg clk32);
     
     
@@ -51,3 +52,4 @@ module phy_tester(
     #150 $finish;    
     end
 endmodule
+
