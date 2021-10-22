@@ -1,10 +1,8 @@
 module probador_serial_paralelo
 (
-    //input [7:0] data2send,
     input [7:0]data_out,
     input active,
     input valid_out,
-    //input [7:0] data2send_synth,
     input [7:0] data_out_synth,
     input active_synth,
     input valid_out_synth,
@@ -17,25 +15,6 @@ module probador_serial_paralelo
 	$dumpfile("serial_paralelo.vcd");
 	$dumpvars;
 
-	data_in <= 0;
-	reset <=0;
-	
-	@(posedge clk_4f);
-	reset <= 0;
-	data_in<=1;
-	@(posedge clk_32f)
-	data_in<=0;
-	@(posedge clk_32f)
-	data_in<=1;
-	@(posedge clk_32f)
-	data_in<=1;
-	@(posedge clk_32f)
-	data_in<=1;
-	@(posedge clk_32f)
-	data_in<=1;
-	@(posedge clk_32f)
-	data_in<=0;
-	
 	@(posedge clk_4f);
 	reset <= 0;
 	data_in<=1;
@@ -209,6 +188,44 @@ module probador_serial_paralelo
 	data_in<=0;
 	@(posedge clk_32f)
 	data_in<=0;
+	
+	@(posedge clk_4f);
+	data_in<=1;
+	@(posedge clk_32f)
+	data_in<=0;
+	@(posedge clk_32f)
+	data_in<=1;
+	@(posedge clk_32f)
+	data_in<=1;
+	@(posedge clk_32f)
+	data_in<=1;
+	@(posedge clk_32f)
+	data_in<=1;
+	@(posedge clk_32f)
+	data_in<=0;
+	@(posedge clk_32f)
+	data_in<=0;
+
+	@(posedge clk_4f);
+	data_in<=0;
+	@(posedge clk_32f)
+	data_in<=0;
+	@(posedge clk_32f)
+	data_in<=0;
+	@(posedge clk_32f)
+	data_in<=0;
+	@(posedge clk_32f)
+	data_in<=1;
+	@(posedge clk_32f)
+	data_in<=1;
+	@(posedge clk_32f)
+	data_in<=1;
+	@(posedge clk_32f)
+	data_in<=1;
+
+	@(posedge clk_4f);
+	data_in<=1;
+	
 	
 
     $finish;

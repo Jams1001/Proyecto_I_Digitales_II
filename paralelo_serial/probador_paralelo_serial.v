@@ -19,12 +19,13 @@ module probador_paralelo_serial
 	reset <=1;
 	
 	@(posedge clk_4f);
+	 reset <= 0;
     @(posedge clk_4f);
 	valid_in <= 0;
 	data_in <= 8'h00;
 
 	@(posedge clk_4f);
-    reset <= 0;
+    reset <= 1;
 	
 
     @(posedge clk_4f);

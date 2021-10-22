@@ -3,7 +3,6 @@
 `include "probador_serial_paralelo.v"
 `include "serial_paralelo_synth.v"
 module BancoPruebas_serial_paralelo();
-//wire [7:0] data2send;
 wire [7:0] data_out,data_out_synth;
 wire clk_4f, clk_32f, valid_out, data_in, reset, active, active_synth,valid_out_synth;
         serial_paralelo serial_paralelobp(/*AUTOINST*/
@@ -11,7 +10,6 @@ wire clk_4f, clk_32f, valid_out, data_in, reset, active, active_synth,valid_out_
             .active		    (active),
             .valid_out		(valid_out),
             .data_out		(data_out[7:0]),
-            //.data2send      (data2send[7:0]),
             // Inputs
             .reset		    (reset),
             .clk_4f		    (clk_4f),
@@ -21,7 +19,6 @@ wire clk_4f, clk_32f, valid_out, data_in, reset, active, active_synth,valid_out_
             // Outputs
             .active		    (active_synth),
             .data_out		(data_out_synth[7:0]),
-            //.data2send      (data2send_synth[7:0]),
             .valid_out		(valid_out_synth),
             // Inputs
             .clk_32f		(clk_32f),
@@ -31,16 +28,14 @@ wire clk_4f, clk_32f, valid_out, data_in, reset, active, active_synth,valid_out_
 		probador_serial_paralelo probador_serial_paralelobp(/*AUTOINST*/
             // Outputs
             .reset		        (reset),
-            .data_in		    (data_in),
+            .data_in		        (data_in),
             .clk_4f		        (clk_4f),
-            .clk_32f		    (clk_32f),
+            .clk_32f		         (clk_32f),
             // Inputs
-            //.data2send          (data2send[7:0]),
-           // .data2send      (data2send_synth[7:0]),
-            .data_out		    (data_out[7:0]),
-            .active		        (active),
-            .valid_out		    (valid_out),
-            .data_out_synth	    (data_out_synth[7:0]),
-            .active_synth	    (active_synth),
-            .valid_out_synth    (valid_out_synth));
+            .data_out		      (data_out[7:0]),
+            .data_out_synth	      (data_out_synth[7:0]),
+            .active		      (active),
+            .active_synth	      (active_synth),
+            .valid_out		      (valid_out),
+            .valid_out_synth        (valid_out_synth));
 endmodule
