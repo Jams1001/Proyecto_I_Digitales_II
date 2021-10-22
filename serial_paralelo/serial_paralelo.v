@@ -8,7 +8,68 @@ module serial_paralelo
 	output reg valid_out, //activo BC_counter>4 y data2send != 0xBC
 	output reg [7:0] data_out
 );
+integer BC_counter;		//contador de BCs
+reg [7:0] data2send;		//guardo mensaje de interés y solo leo en caso importantes
+integer counter;		//Contador de 0 a 7 para ir sacando valores
+reg [7:0] data2send2;
 
+
+	always @(posedge clk_32f) begin
+		if (reset==0)begin			//Inicializa
+			data_out [7:0]<= 8'b00000000;
+			valid_out <= 0;
+			active <= 0;
+			BC_counter <= 0;
+			counter <= 0;
+			data2send <= 0;
+		end
+		else if (reset==1) begin
+			data2send <= {data2send[6:0], data_in};
+			
+			if (BC_counter == 4 && counter == 1) 
+			begin		//Si BC counter en 4, saca los datos cuando contador llega a 0
+				active <= 1;
+				if (data2send == 8'hBC && data2send2 != 8'hBC) 
+				begin 
+					valid_out <= 0;
+				end
+				else if (data2send != 8'hBC) begin
+					data_out <= data2send;
+					valid_out <= 1;
+				end
+			end
+
+
+			else if (data2send == 8'hBC && BC_counter < 4) 
+			begin
+				BC_counter <= BC_counter+1;
+				valid_out <= 0;
+				data_out <= 0;
+			end
+
+			else if (data2send != 8'hBC && BC_counter < 4) 
+			begin
+				active <=0;
+				valid_out <= 0;
+				data_out <= 0;
+			end
+
+			if (counter == 7) begin
+				counter <= 0;
+			end
+			else counter <= counter+1;					// va de 0-7 en un ciclo de 4f
+			
+			if (counter == 1) data2send2 <= data2send;
+		end
+	end
+
+
+
+
+
+
+
+/*
 reg [7:0] data2send;
 reg [3:0] BC_counter; 
 reg [3:0] selector1;
@@ -30,22 +91,7 @@ reg [3:0] selector1;
         else
         begin
 			data2send <= {data2send[6:0], data_in};
-			/*case (selector1)
-				0: data2send[7] <= data_in;
-				1: data2send[6] <= data_in;
-				2: data2send[5] <= data_in;
-				3: data2send[4] <= data_in;
-				4: data2send[3] <= data_in;
-				5: data2send[2] <= data_in;
-				6: data2send[1] <= data_in;
-				7: 
-				begin
-					data2send[0] <= data_in;
-					selector1 <= 0;
-				end
-			endcase
-			selector1 <= selector1 + 1;*/
-
+			
 
 			if(data2send==8'hBC && BC_counter < 4'b0100)
 			begin
@@ -68,5 +114,5 @@ reg [3:0] selector1;
 				data_out <= data2send;
 			end
         end
-    end
+    end*/
 endmodule
