@@ -29,6 +29,7 @@ module probador_paralelo_serial
 	
 
     @(posedge clk_4f);
+	reset <= 0;
     valid_in <= 1;
 	data_in <= 8'hFF;
 
